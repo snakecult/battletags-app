@@ -33,4 +33,17 @@ public class UserServiceClient {
 		return new URL("http://battletags.rdiablo.com/user/irc_name/" + ircName
 				+ "*/json");
 	}
+
+	private URL getUserByIrcNameUrl(final String ircName)
+			throws MalformedURLException {
+		return new URL("http://battletags.rdiablo.com/user/irc_name/" + ircName
+				+ "/json");
+	}
+
+	public User getUserByIrcName(String ircName) throws IOException {
+		final URL serviceUrl = getUserByIrcNameUrl(ircName);
+		final String json = HttpUtil.readUrl(serviceUrl);
+
+		return parseUsers(json).get(0);
+	}
 }
