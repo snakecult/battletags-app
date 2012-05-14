@@ -71,12 +71,10 @@ public class SearchActivity extends ListActivity {
 			users = this.s.getUsersByIrcName(search);
 			Collections.sort(users, new UserIrcNameComparator());
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
 		populateUserList(users);
-		// genTableView(users);
 	}
 
 	ArrayList<String> listItems = new ArrayList<String>();

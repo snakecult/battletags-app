@@ -32,7 +32,6 @@ public class ViewUserActivity extends Activity {
 		try {
 			user = s.getUserByIrcName(ircName);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
